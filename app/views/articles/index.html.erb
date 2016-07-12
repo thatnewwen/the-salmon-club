@@ -1,0 +1,26 @@
+<div class="container">
+  <% if admin? %>
+    <div class="card-panel teal new-post">
+      <h4><a href='/articles/new' class="white-text">Post a new book.</a></h4>
+
+    </div>
+  <% end %>
+
+  <% if @articles %>
+	  <% @articles.each do |article| %>
+	    <article class="article card blue-grey darken-1" id="<%= article.id %>">
+      <div class="card-content">
+        <h4 class="title white-text"><a class="index-title" href='/articles/<%= article.id %>'><%= article.title %></a></h4>
+        <span class="white-text"><%= raw article.content %></span>
+        </div>
+        <p class="post-info card-action white-text">
+          <span class="start-end">
+            <%= article.start_date.strftime('%b %d')  %> - 
+            <%= article.end_date.strftime('%b %d')  %>
+          </span>
+        </p>
+	    </article>
+	  <% end %>
+  <% end %>
+
+</div>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Salmon</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/css?family=Scope+One" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+  <script src='//cdn.tinymce.com/4/tinymce.min.js'></script>
+  <script>
+    tinymce.init({
+      selector: '#mytextarea',
+      plugins: "link",
+      // menubar: "insert",
+      // toolbar: "link"
+    });
+    </script>
+</head>
+<body>
+<nav>
+  <div class="nav-wrapper">
+    <a href="/" class="brand-logo">The Salmon Club</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <% if current_user %>
+        <li><%= link_to 'Home', root_path%></li>
+        <li><%= link_to 'About', about_path %></li>
+        <li><%= link_to 'Logout', logout_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to 'About', about_path %></li>
+        <li><%= link_to 'Register', new_user_path %></li>
+        <li><%= link_to 'Login', login_path%></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
+
+<%= yield %>
+
+</body>
+</html>
