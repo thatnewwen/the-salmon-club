@@ -37,6 +37,23 @@ class CommentsController < ApplicationController
     end
   end
 
+  def edit
+    @comment = Comment.find(params[:id])
+    @article_id = params[:article_id]
+  end
+
+  def update
+    @comment = Comment.find(params[:id])
+    @comment.update_attributes(comment_params)
+
+    if @comment.save
+      redirect_to "/articles/#{params[:article_id]}"
+    else
+      @errors = @comment.errors.full_messages
+      render 'new'
+    end
+  end
+
   def destroy
     @comment = Comment.find(params[:id])
 

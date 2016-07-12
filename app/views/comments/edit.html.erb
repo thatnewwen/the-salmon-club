@@ -1,0 +1,13 @@
+<div class="new-container container">
+<h2 class="subtitle">Post a comment</h2>
+<%= form_for(@comment) do |f| %>
+  <p class="input-field">
+	  <%= hidden_field_tag(:article_id, @article_id) %>
+    <%= f.text_area :content, class: "mytextarea"%>
+  </p>
+  <p>
+    <%= f.submit 'submit', :class => 'waves-effect waves-light btn' %>
+  </p>
+
+<% end %>
+  </div>

@@ -15,6 +15,8 @@ ActiveRecord::Schema.define(version: 20160709211818) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title",      limit: 255
+    t.string   "sub_title",  limit: 255
+    t.text     "readings",   limit: 65535
     t.text     "content",    limit: 65535
     t.date     "start_date"
     t.date     "end_date"

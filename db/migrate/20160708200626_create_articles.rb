@@ -2,6 +2,8 @@ class CreateArticles < ActiveRecord::Migration
   def change
     create_table :articles do |t|
     	t.string   :title
+      t.string   :sub_title
+      t.text     :readings
       t.text     :content
       t.date     :start_date
       t.date     :end_date
