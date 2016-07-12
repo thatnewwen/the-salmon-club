@@ -23,6 +23,23 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def edit
+    @article = Article.find(params[:id].to_i)
+  end
+
+  def update
+    @article = Article.find(params[:id].to_i)
+
+    @article.update_attributes(article_params)
+
+    if @article.save
+      redirect_to "/articles/#{@article.id}"
+    else
+      @errors = @article.errors.full_messages
+      render 'edit'
+    end
+  end
+
   def destroy
     @article = Article.find(params[:id].to_i)
     @article.destroy
@@ -31,6 +48,6 @@ class ArticlesController < ApplicationController
 
   private
     def article_params
-      params.require(:article).permit(:title, :start_date, :end_date, :content)
+      params.require(:article).permit(:title, :start_date, :end_date, :content, :readings, :sub_title)
     end
 end

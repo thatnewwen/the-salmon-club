@@ -128,9 +128,6 @@ article p a {
   position: relative;
 }
 
-.ind-title h4{
-	display: inline;
-}
 
 .start-end{
 	position: absolute;
@@ -145,7 +142,12 @@ article p a {
 	text-transform: uppercase;
 	color: pink;
 	padding-left: 0px;
-	transition: color .3s ease;
+	transition: color .8s ease;
+}
+
+.comment-edit{
+	float: left;	
+	margin-left: 1em;
 }
 
 .comment-delete:hover{
@@ -153,7 +155,7 @@ article p a {
 }
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
-	color: #efaa51;
+	color: #f7bf77;
 }
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating):hover {
@@ -161,6 +163,74 @@ article p a {
 }
 
 .about-container{
-  font-size: larger;
+  text-align: justify;
   color: #546e7a;
+}
+
+.admin-button{
+	float: right;
+	margin-left: 1em;
+	border: none;
+	background-color: inherit;
+	text-transform: uppercase;
+	color: black;
+}
+
+.add-card a{
+	text-transform: uppercase;
+	font-family: 'Scope One', serif;
+
+}
+
+.add-card a:hover{
+	font-weight: bold;
+}
+
+.brand-logo:hover{
+	font-weight: bold;
+}
+
+.sub-title{
+  margin-top: 0px;
+  font-size: 20px;
+  font-style: italic;
+}
+
+.index-title{
+	margin-bottom: 0px;
+}
+
+.title-area{
+	border-bottom: 1px solid white;
+  margin-bottom: 1em;
+}
+
+.title-area:hover a{
+  color: #ee6e73;
+}
+
+.margin-bottom{
+	margin-bottom: 1em;
+}
+
+.main-title{
+	margin-bottom: 0.15em;
+}
+
+.container {
+    width: 60%;
+}
+
+ol li{
+	margin-bottom: 1em;
+}
+
+ol li a{
+	color: #ffab52;
+  transition: color 0.8s ease;
+}
+
+ol li a:hover{
+	color: #ffd09e;
+
 }

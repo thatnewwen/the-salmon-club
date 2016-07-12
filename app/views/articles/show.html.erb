@@ -1,20 +1,25 @@
 <div class="container show-controller">
 	<div class="card-content">
 	  <div class="title ind-title">
-	  <h4><%= @article.title %></h4>
+	  <h4 class="main-title"><%= @article.title %></h4>
+	  <h4 class="title sub-title margin-bottom"><%= @article.sub_title %></h4>
 	  <span class="start-end">
 		  <%= @article.start_date.strftime('%b %d')  %> - 
 		  <%= @article.end_date.strftime('%b %d')  %>
 		  </span>
 	  </div>
+	  <h2 class="subtitle">Description</h2>
 	  <p class="article-content flow-text"><%= raw @article.content %></p>
+	  <h2 class="subtitle">Main Text</h2>
+	  <p class="article-content flow-text"><%= raw @article.readings %></p>
   </div>
   <div class="post-info card-action">
 	  <% if logged_in? %>
 	    <% if (admin? || current_user.id == @article.author.id) %>
-		    <%= form_for @article, method: :delete do |f| %>
-          <%= f.submit 'delete', :class => 'waves-effect red btn' %>
+		    <%= form_for @article, :html => {:class => "admin-button"}, method: :delete do |f| %>
+          <%= f.submit 'delete', :class => 'admin-button' %>
         <% end %>
+		    <a class="admin-button" href="/articles/<%=@article.id%>/edit">EDIT</a>
 		  <% end %>
 	  <% end %>
   </div>
@@ -23,7 +28,7 @@
 <div class="comments">
   <div class="container">
     <% if logged_in? %>
-	    <div class="card-panel teal new-post">
+	    <div class="card-panel teal new-post add-card">
 	      <h4><a href='/articles/<%= @article.id %>/comments' class="white-text">Post a new comment.</a></h4>
 	    </div>
     <% end %>
@@ -41,6 +46,7 @@
 			      		    <%= hidden_field_tag(:article_id, @article.id) %>
 		                <%= f.submit 'delete', :class => 'comment-delete' %>
 		              <% end %>
+          		    <a class="comment-edit" href="/comments/<%=comment.id%>/edit?article_id=<%=@article.id%>">EDIT</a>
 		      		  <% end %>
 		      	  <% end %>
 		        <span class="name"> Posted by
@@ -70,6 +76,7 @@
 
                         <%= f.submit 'delete', :class => 'comment-delete' %>
                       <% end %>
+                      <a class="comment-edit" href="/comments/<%=sub_comments.id%>/edit?article_id=<%=@article.id%>">EDIT</a>
               		  <% end %>
               	  <% end %>
                 <span class="name"> Posted by
