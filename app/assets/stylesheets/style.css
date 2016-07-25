@@ -64,7 +64,6 @@ nav .brand-logo{
 }
 
 .show-controller{
-	padding-bottom: 3em;
 	color: #505050;
 }
 
@@ -171,9 +170,13 @@ article p a {
 	float: right;
 	margin-left: 1em;
 	border: none;
-	background-color: inherit;
 	text-transform: uppercase;
 	color: black;
+}
+
+.delete-button{
+	background-color: inherit;
+
 }
 
 .add-card a{
@@ -232,5 +235,59 @@ ol li a{
 
 ol li a:hover{
 	color: #ffd09e;
+}
 
+.admin-button.discussion-button{
+	color: white;
+	font-family: 'Scope One', sans-serif;
+	margin-top: -10px;
+	float: right;
+}
+
+.delete-button{
+	padding-top: 1px;
+}
+
+.discussion-date{
+	color: white;
+	font-family: 'Scope One', sans-serif;
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 1em;
+}
+
+.card-panel {
+	position: relative;
+}
+
+.tabs .tab a {
+  color: #546e7a;
+  background-color: rgb(165, 186, 195);
+}
+
+.tabs .tab a:hover{
+	color: white;
+}
+
+.tabs .tab a.active {
+	color: white;
+	background-color: #546e7a;
+}
+
+.tabs-col{
+	width: 70%;
+	margin-left: -30%;
+	margin-top: 5em;
+}
+
+.discussion-title{
+  text-align: center;
+  font-family: 'Scope One', sans-serif;
+}
+
+.date-title{
+	text-align: center;
+	font-family: 'Scope One', sans-serif;
+	margin-bottom: 2em;
 }

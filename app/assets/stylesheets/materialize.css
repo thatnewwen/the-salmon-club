@@ -4804,7 +4804,7 @@ small {
   position: absolute;
   bottom: 0;
   height: 2px;
-  background-color: #f6b2b5;
+  background-color: rgba(165, 186, 195, 0) !important;
   will-change: left, right;
 }
 

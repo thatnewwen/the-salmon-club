@@ -11,71 +11,82 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160709211818) do
+ActiveRecord::Schema.define(version: 20160724043513) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "articles", force: :cascade do |t|
-    t.string   "title",      limit: 255
-    t.string   "sub_title",  limit: 255
-    t.text     "readings",   limit: 65535
-    t.text     "content",    limit: 65535
+    t.string   "title"
+    t.string   "sub_title"
+    t.text     "readings"
+    t.text     "content"
     t.date     "start_date"
     t.date     "end_date"
-    t.integer  "author_id",  limit: 4
-    t.integer  "tag_id",     limit: 4
-    t.integer  "book_id",    limit: 4
+    t.integer  "author_id"
+    t.integer  "tag_id"
+    t.integer  "book_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "books", force: :cascade do |t|
-    t.string   "title",      limit: 255
-    t.string   "author",     limit: 255
-    t.string   "publisher",  limit: 255
-    t.string   "image_url",  limit: 255
-    t.integer  "article_id", limit: 4
+    t.string   "title"
+    t.string   "author"
+    t.string   "publisher"
+    t.string   "image_url"
+    t.integer  "article_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "categories", force: :cascade do |t|
-    t.integer  "tag_id",     limit: 4
-    t.integer  "article_id", limit: 4
+    t.integer  "tag_id"
+    t.integer  "article_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "comments", force: :cascade do |t|
-    t.text     "content",          limit: 65535
-    t.string   "commentable_type", limit: 255
-    t.integer  "commentable_id",   limit: 4
-    t.integer  "author_id",        limit: 4
+    t.text     "content"
+    t.string   "commentable_type"
+    t.integer  "commentable_id"
+    t.integer  "author_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "discussions", force: :cascade do |t|
+    t.integer  "article_id"
+    t.date     "start_date"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "links", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.string   "author",      limit: 255
-    t.string   "publication", limit: 255
-    t.string   "url",         limit: 255
-    t.integer  "article_id",  limit: 4
+    t.string   "title"
+    t.string   "author"
+    t.string   "publication"
+    t.string   "url"
+    t.integer  "article_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "tags", force: :cascade do |t|
-    t.string   "name",       limit: 255
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "first_name",      limit: 255
-    t.string   "last_name",       limit: 255
-    t.string   "username",        limit: 255
-    t.string   "email",           limit: 255
-    t.string   "password_digest", limit: 255
-    t.boolean  "admin",                       default: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "username"
+    t.string   "email"
+    t.string   "password_digest"
+    t.boolean  "admin",           default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

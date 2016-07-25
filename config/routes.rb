@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :users
   
   resources :articles do
+    get 'discussions' => 'discussions#new'
+    post 'discussions' => 'discussions#create', as: :discussion_create
     get 'comments' => 'comments#article_new'  
     post 'comments' => 'comments#article_create', as: :comment_create
   end
@@ -16,6 +18,11 @@ Rails.application.routes.draw do
   resources :comments do
     get 'comments' => 'comments#comment_new'  
     post 'comments' => 'comments#comment_create', as: :create
+  end
+
+  resources :discussions do
+    get 'comments' => 'comments#discussion_new'  
+    post 'comments' => 'comments#discussion_create', as: :comment_create
   end
 
   resources :tags

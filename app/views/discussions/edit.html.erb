@@ -1,0 +1,17 @@
+<div class="new-container container">
+  <h2 class="subtitle">Post a discussion</h2>
+  <%= form_for @discussion do |f| %>
+    <p class="input-field">
+      <%= f.label :description  %>
+      <%= f.text_area :description%>
+    </p>
+    <p class="input-field">
+      <%= f.label :start_date %>
+      <%= f.text_field :start_date %>
+    </p>
+    <p>
+      <%= f.submit 'update', :class => 'waves-effect waves-light btn' %>
+    </p>
+
+  <% end %>
+</div>
