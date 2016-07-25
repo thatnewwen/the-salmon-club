@@ -10,6 +10,8 @@ class ArticlesController < ApplicationController
   def show
   	@article = Article.find(params[:id].to_i)
     @comments = @article.comments
+    @discussions = @article.discussions.sort {|a,b| a.created_at <=> b.created_at}
+
   end
 
   def create
