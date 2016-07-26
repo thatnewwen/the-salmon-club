@@ -22,11 +22,11 @@
 		    <a class="admin-button" href="/articles/<%=@article.id%>/edit">EDIT</a>
 		  <% end %>
 	  <% end %>
-	          <% if logged_in? %>
-	            <% if admin? %>
-	              <a href='/articles/<%= @article.id %>/discussions' class="">NEW DISCUSSION</a>
-	  					<% end %>
-	  				<% end %>
+	  <% if logged_in? %>
+	    <% if admin? %>
+	      <a href='/articles/<%= @article.id %>/discussions' class="">NEW DISCUSSION</a>
+			<% end %>
+		<% end %>
   </div>
     <div class="tabs-col col s12">
       <ul class="tabs">

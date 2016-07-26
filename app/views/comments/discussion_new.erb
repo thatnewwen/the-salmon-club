@@ -1,5 +1,12 @@
-<div class="new-container container">
-	<h2 class="subtitle">Post a comment</h2>
+<div class="new-text">
+	<script src='//cdn.tinymce.com/4/tinymce.min.js'></script>
+	<script>
+	  tinymce.init({
+	    selector: '.mytextarea',
+	    plugins: "link"
+	  });
+	  </script>
+	<h2 class="white-text subtitle">Post a comment</h2>
 	<%= form_for(@comment, url: discussion_comment_create_path) do |f| %>
 	  <p class="input-field">
 	    <%= f.label :content  %>

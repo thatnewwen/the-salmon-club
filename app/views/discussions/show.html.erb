@@ -1,16 +1,15 @@
-<div class="new-container container">
+<div class="new-container container comments-container">
   <h3 class="white-text discussion-title"><%=@discussion.description%></h3>
   <h5 class="white-text date-title"> <%= @discussion.start_date.strftime('%B %d')%></h5>
 
   <% if logged_in? %>
-    <div class="card-panel teal new-post add-card">
-      <h4><a href='/discussions/<%= @discussion.id %>/comments' class="white-text">Post a new comment.</a></h4>
+    <div class="card-panel teal new-post add-card new-comment">
+      <h4><a href='/discussions/<%= @discussion.id %>/comments' class="comment-link white-text">Post a new comment.</a></h4>
     </div>
   <% end %>
   <% if @comments %>
-      <% @comments.each do |comment| %>
+    <% @comments.each do |comment| %>
 			  <div class="card article-comment">
-
 				  <div class="card-content">
 		        <%= raw comment.content %>         
 		      </div>
