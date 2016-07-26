@@ -1,0 +1,66 @@
+<div class="card article-comment">
+
+	<div class="card-content">
+  	<%= raw @comment.content %>         
+	</div>
+	<div class="card-action">
+	  <% if logged_in? %>
+	    <% if (admin? || current_user.id == @comment.author.id) %>
+		    <%= form_for @comment, method: :delete do |f| %>
+  		    <%= hidden_field_tag(:discussion_id, @discussion.id) %>
+          <%= f.submit 'delete', :class => 'comment-delete' %>
+        <% end %>
+		    <a class="comment-edit" href="/comments/<%=@comment.id%>/edit?discussion_id=<%=@discussion.id%>">EDIT</a>
+		  <% end %>
+	  <% end %>
+  	<span class="name"> Posted by
+    	<%= @comment.author.first_name %>
+    	<%= @comment.author.last_name %>
+  	</span>|
+
+		<span class="time-ago">
+    	<%= time_ago_in_words(@comment.created_at) %> Ago
+  	</span>|
+
+  	<a class="reply" href="/comments/<%= @comment.id %>/comments">Reply</a>
+	</div>
+</div>
+<% if @comment.comments %>
+	<% @comment.comments.each do |sub_comments| %>
+  	<div class="card sub-comment">
+
+		  <div class="card-content">
+	      <%= raw sub_comments.content %>    
+	    </div>
+	    <div class="card-action">
+	  	  <% if logged_in? %>
+	  	    <% if (admin? || current_user.id == sub_comments.author.id) %>
+	  		    <%= form_for sub_comments, method: :delete do |f| %>
+	    		    <%= hidden_field_tag(:discussion_id, @discussion.id) %>
+	            <%= f.submit 'delete', :class => 'comment-delete' %>
+	          <% end %>
+	          <a class="comment-edit" href="/comments/<%=sub_comments.id%>/edit?discussion_id=<%=@discussion.id%>">EDIT</a>
+	  		  <% end %>
+	  	  <% end %>
+		    <span class="name"> Posted by
+	        <%= sub_comments.author.first_name %>
+	        <%= sub_comments.author.last_name %>
+	      </span>|
+
+				<span class="time-ago">
+	        <%= time_ago_in_words(@comment.created_at) %> Ago
+	      </span>
+	    </div>
+	  </div>
+	<% end %>  
+<% end %>
+<% if logged_in? %>
+	<% if admin? %>
+		<div class="post-info card-action">
+	    <%= form_for @discussion, :html => {:class => ""}, method: :delete do |f| %>
+        <%= f.submit 'delete', :class => 'admin-button discussion-button delete-button' %>
+      <% end %>
+			<a class="admin-button discussion-button" href="/discussions/<%=@discussion.id%>/edit">EDIT</a>
+		</div>
+	<% end %>
+<% end %>

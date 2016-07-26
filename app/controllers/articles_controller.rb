@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
 	def index
-    @articles = Article.all
+    articles = Article.all
+    @articles = articles.sort {|a,b| b.created_at <=> a.created_at}
   end
 
   def new
