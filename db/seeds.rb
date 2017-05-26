@@ -1,18 +1,59 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# frozen_string_literal: true
+admin = User.create!(
+    display_name: 'Admin',
+    email: "alexwen.creates@gmail.com",
+    password: "salmonadmin",
+    admin: true
+)
 
-User.create(name:"Alex Wen", username:"thatnewwen", email:"alex@alex.com", password:"123456", admin: true)
+messageboard = Thredded::Messageboard.create!(
+    name: 'General',
+    slug: 'general',
+    description: 'A board is not a board without some posts'
+)
 
-Article.create(title:"North Korea and the Western Gaze", content:"Here is some text.", author_id: 1, tag_id: 1)
+Thredded::TopicForm.new(
+    title: 'My first topic',
+    content: <<-MARKDOWN,
+Hello **world**! :smile: This first post shows some of the Thredded default post
+formatting functionality.
 
-Article.create(title:"The Politics of Borders", content:"Here is some text.", author_id: 1, tag_id: 1)
+### Quote
 
-Tag.create(name:"Politics")
+> There is nothing either good or bad, but thinking makes it so.
 
-Category.create(tag_id: 1, article_id: 1)
-Category.create(tag_id: 1, article_id: 2)
+### Image
+
+![lime-cat](https://cloud.githubusercontent.com/assets/216339/19857777/2be75b1e-9f3c-11e6-9845-f30ceb4308a9.jpg)
+
+### Video
+
+https://www.youtube.com/watch?v=dQw4w9WgXcQ
+
+### Table
+
+| x | y | x ⊕ y |
+|---|---|:-----:|
+| 1 | 1 |   0   |
+| 1 | 0 |   1   |
+| 0 | 1 |   1   |
+| 0 | 0 |   0   |
+
+### Code
+
+```ruby
+puts 'Hello world'
+```
+
+Code highlighting can be enabled by installing the
+[Markdown Coderay plugin](https://github.com/thredded/thredded-markdown_coderay).
+
+BBCode support (e.g. [b]bold[/b]) can be enabled by installing the
+[BBCode plugin](https://github.com/thredded/thredded-bbcode).
+
+TeX Math support (e.g. $$\phi$$) can be enabled by installing the
+[KaTeX plugin](https://github.com/thredded/thredded-markdown_katex).
+    MARKDOWN
+    user: admin,
+    messageboard: messageboard
+).save
