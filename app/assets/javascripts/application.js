@@ -12,4 +12,5 @@
 //
 //= require jquery3
 //= require rails-ujs
+//= require thredded
 //= require_tree .

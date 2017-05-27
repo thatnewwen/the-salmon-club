@@ -7,12 +7,11 @@
                          rel: 'apple-touch-icon', type: 'image/png' %>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag current_theme, media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag current_theme, media: 'all' %>
 
     <%= javascript_include_tag 'application',
                                 async: !Rails.application.config.assets.debug,
-                                defer: true,
-                                'data-turbolinks-track': 'reload' %>
+                                defer: true %>
 
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 </head>
