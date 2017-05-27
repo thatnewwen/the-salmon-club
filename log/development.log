@@ -5119,3 +5119,293 @@ Completed 200 OK in 537ms (Views: 461.2ms | ActiveRecord: 33.9ms)
 [ActiveJob] [Thredded::ActivityUpdaterJob] [42712b29-8a62-4bc5-8ec6-57cff5dcbf8e]   [1m[35mSQL (6.8ms)[0m  [1m[33mUPDATE "thredded_messageboard_users" SET "last_seen_at" = $1 WHERE "thredded_messageboard_users"."id" = $2[0m  [["last_seen_at", "2017-05-27 02:25:47.335710"], ["id", 1]]
 [ActiveJob] [Thredded::ActivityUpdaterJob] [42712b29-8a62-4bc5-8ec6-57cff5dcbf8e]   [1m[35m (28.4ms)[0m  [1m[35mCOMMIT[0m
 [ActiveJob] [Thredded::ActivityUpdaterJob] [42712b29-8a62-4bc5-8ec6-57cff5dcbf8e] Performed Thredded::ActivityUpdaterJob (Job ID: 42712b29-8a62-4bc5-8ec6-57cff5dcbf8e) from Async(default) in 75.61ms
+Started GET "/forum/general" for 127.0.0.1 at 2017-05-26 21:27:42 -0500
+Processing by Thredded::TopicsController#index as HTML
+  Parameters: {"messageboard_id"=>"general"}
+  [1m[36mThredded::Messageboard Load (0.6ms)[0m  [1m[34mSELECT  "thredded_messageboards".* FROM "thredded_messageboards" WHERE "thredded_messageboards"."slug" = $1 LIMIT $2[0m  [["slug", "general"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mThredded::Messageboard Load (0.4ms)[0m  [1m[34mSELECT "thredded_messageboards".* FROM "thredded_messageboards"[0m
+  [1m[36mThredded::Topic Load (0.7ms)[0m  [1m[34mSELECT  "thredded_topics".* FROM "thredded_topics" WHERE "thredded_topics"."messageboard_id" = $1 AND (("thredded_topics"."moderation_state" != 2 OR "thredded_topics"."user_id" = 2) OR "thredded_topics"."messageboard_id" IN (2, 1)) ORDER BY "thredded_topics"."sticky" DESC, "thredded_topics"."last_post_at" DESC, "thredded_topics"."id" DESC LIMIT $2 OFFSET $3[0m  [["messageboard_id", 1], ["LIMIT", 50], ["OFFSET", 0]]
+  [1m[36mThredded::TopicCategory Load (0.3ms)[0m  [1m[34mSELECT "thredded_topic_categories".* FROM "thredded_topic_categories" WHERE "thredded_topic_categories"."topic_id" = 1[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2[0m
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2[0m
+  [1m[36mThredded::UserTopicReadState Load (4.3ms)[0m  [1m[34mSELECT "thredded_user_topic_read_states".* FROM "thredded_user_topic_read_states" WHERE "thredded_user_topic_read_states"."user_id" = $1 AND "thredded_user_topic_read_states"."postable_id" = 1[0m  [["user_id", 2]]
+  [1m[36mThredded::UserTopicFollow Load (0.7ms)[0m  [1m[34mSELECT "thredded_user_topic_follows".* FROM "thredded_user_topic_follows" WHERE "thredded_user_topic_follows"."user_id" = $1 AND "thredded_user_topic_follows"."topic_id" = 1[0m  [["user_id", 2]]
+  Rendering /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/topics/index.html.erb within layouts/application
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_breadcrumbs.html.erb (1.2ms) [cache miss]
+  [1m[36mThredded::Category Load (0.3ms)[0m  [1m[34mSELECT "thredded_categories".* FROM "thredded_categories" WHERE "thredded_categories"."messageboard_id" = $1[0m  [["messageboard_id", 1]]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/posts_common/form/_before_content.html.erb (0.5ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/posts_common/form/_after_content.html.erb (0.5ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/posts_common/form/_content_field.html.erb (8.8ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/posts_common/form/_preview_area.html.erb (1.1ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/posts_common/form/_content.html.erb (18.2ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/topics/_topic_form_admin_options.html.erb (2.6ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/topics/_form.html.erb (32.9ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/users/_link.html.erb (2.2ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/users/_link.html.erb (0.4ms) [cache miss]
+  Rendered collection of /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/topics/_topic.html.erb [1 times] (16.4ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "thredded_messageboards"."id" FROM "thredded_messageboards"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "thredded_posts" WHERE "thredded_posts"."messageboard_id" IN (2, 1) AND "thredded_posts"."moderation_state" = $1[0m  [["moderation_state", 0]]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/nav/_moderation.html.erb (6.4ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/nav/_notification_preferences.html.erb (6.4ms) [cache miss]
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "thredded_private_topics" INNER JOIN "thredded_private_users" ON "thredded_private_users"."private_topic_id" = "thredded_private_topics"."id" LEFT OUTER JOIN "thredded_user_private_topic_read_states" ON "thredded_private_topics"."id" = "thredded_user_private_topic_read_states"."postable_id" AND "thredded_user_private_topic_read_states"."user_id" = 2 WHERE "thredded_private_users"."user_id" = $1 AND ("thredded_user_private_topic_read_states"."id" IS NULL OR "thredded_user_private_topic_read_states"."read_at" < "thredded_private_topics"."last_post_at")[0m  [["user_id", 2]]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/nav/_private_topics.html.erb (11.2ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/search/_form.html.erb (1.5ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_nav.html.erb (41.4ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_header.html.erb (46.0ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_flash_messages.html.erb (0.6ms) [cache miss]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "thredded_user_details" ON "users"."id" = "thredded_user_details"."user_id" INNER JOIN "thredded_messageboard_users" ON "thredded_user_details"."id" = "thredded_messageboard_users"."thredded_user_detail_id" WHERE "thredded_messageboard_users"."thredded_messageboard_id" = $1 AND ("thredded_messageboard_users"."last_seen_at" > '2017-05-27 02:22:42.979224')[0m  [["thredded_messageboard_id", 1]]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_currently_online.html.erb (4.5ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_page.html.erb (63.5ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/topics/index.html.erb within layouts/application (143.9ms)
+  Rendered shared/_header.html.erb (5.7ms) [cache miss]
+[ActiveJob] Enqueued Thredded::ActivityUpdaterJob (Job ID: 416c8ee3-bbef-4085-af01-ba368a2dcb79) to Async(default) with arguments: 2, 1
+[ActiveJob] [Thredded::ActivityUpdaterJob] [416c8ee3-bbef-4085-af01-ba368a2dcb79] Performing Thredded::ActivityUpdaterJob (Job ID: 416c8ee3-bbef-4085-af01-ba368a2dcb79) from Async(default) with arguments: 2, 1
+Completed 200 OK in 320ms (Views: 274.4ms | ActiveRecord: 13.5ms)
+
+
+[ActiveJob] [Thredded::ActivityUpdaterJob] [416c8ee3-bbef-4085-af01-ba368a2dcb79]   [1m[36mThredded::UserDetail Load (1.2ms)[0m  [1m[34mSELECT  "thredded_user_details".* FROM "thredded_user_details" WHERE "thredded_user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [416c8ee3-bbef-4085-af01-ba368a2dcb79]   [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [Thredded::ActivityUpdaterJob] [416c8ee3-bbef-4085-af01-ba368a2dcb79]   [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [416c8ee3-bbef-4085-af01-ba368a2dcb79]   [1m[36mThredded::UserDetail Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "thredded_user_details" WHERE "thredded_user_details"."user_id" = $1 AND ("thredded_user_details"."id" != $2) LIMIT $3[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [416c8ee3-bbef-4085-af01-ba368a2dcb79]   [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "thredded_user_details" SET "last_seen_at" = $1, "updated_at" = $2 WHERE "thredded_user_details"."id" = $3[0m  [["last_seen_at", "2017-05-27 02:27:43.113538"], ["updated_at", "2017-05-27 02:27:43.126950"], ["id", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [416c8ee3-bbef-4085-af01-ba368a2dcb79]   [1m[35m (34.0ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [Thredded::ActivityUpdaterJob] [416c8ee3-bbef-4085-af01-ba368a2dcb79]   [1m[36mThredded::MessageboardUser Load (46.5ms)[0m  [1m[34mSELECT  "thredded_messageboard_users".* FROM "thredded_messageboard_users" WHERE "thredded_messageboard_users"."thredded_messageboard_id" = $1 AND "thredded_messageboard_users"."thredded_user_detail_id" = $2 LIMIT $3[0m  [["thredded_messageboard_id", 1], ["thredded_user_detail_id", 1], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [416c8ee3-bbef-4085-af01-ba368a2dcb79]   [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [Thredded::ActivityUpdaterJob] [416c8ee3-bbef-4085-af01-ba368a2dcb79]   [1m[36mThredded::Messageboard Load (0.4ms)[0m  [1m[34mSELECT  "thredded_messageboards".* FROM "thredded_messageboards" WHERE "thredded_messageboards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [416c8ee3-bbef-4085-af01-ba368a2dcb79]   [1m[36mThredded::UserDetail Load (1.1ms)[0m  [1m[34mSELECT  "thredded_user_details".* FROM "thredded_user_details" WHERE "thredded_user_details"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [416c8ee3-bbef-4085-af01-ba368a2dcb79]   [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE "thredded_messageboard_users" SET "last_seen_at" = $1 WHERE "thredded_messageboard_users"."id" = $2[0m  [["last_seen_at", "2017-05-27 02:27:43.113538"], ["id", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [416c8ee3-bbef-4085-af01-ba368a2dcb79]   [1m[35m (12.2ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [Thredded::ActivityUpdaterJob] [416c8ee3-bbef-4085-af01-ba368a2dcb79] Performed Thredded::ActivityUpdaterJob (Job ID: 416c8ee3-bbef-4085-af01-ba368a2dcb79) from Async(default) in 174.96ms
+Started GET "/forum/general" for 127.0.0.1 at 2017-05-26 21:27:44 -0500
+Processing by Thredded::TopicsController#index as HTML
+  Parameters: {"messageboard_id"=>"general"}
+  [1m[36mThredded::Messageboard Load (0.3ms)[0m  [1m[34mSELECT  "thredded_messageboards".* FROM "thredded_messageboards" WHERE "thredded_messageboards"."slug" = $1 LIMIT $2[0m  [["slug", "general"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mThredded::Messageboard Load (0.3ms)[0m  [1m[34mSELECT "thredded_messageboards".* FROM "thredded_messageboards"[0m
+  [1m[36mThredded::Topic Load (0.5ms)[0m  [1m[34mSELECT  "thredded_topics".* FROM "thredded_topics" WHERE "thredded_topics"."messageboard_id" = $1 AND (("thredded_topics"."moderation_state" != 2 OR "thredded_topics"."user_id" = 2) OR "thredded_topics"."messageboard_id" IN (2, 1)) ORDER BY "thredded_topics"."sticky" DESC, "thredded_topics"."last_post_at" DESC, "thredded_topics"."id" DESC LIMIT $2 OFFSET $3[0m  [["messageboard_id", 1], ["LIMIT", 50], ["OFFSET", 0]]
+  [1m[36mThredded::TopicCategory Load (1.1ms)[0m  [1m[34mSELECT "thredded_topic_categories".* FROM "thredded_topic_categories" WHERE "thredded_topic_categories"."topic_id" = 1[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2[0m
+  [1m[36mThredded::UserTopicReadState Load (1.4ms)[0m  [1m[34mSELECT "thredded_user_topic_read_states".* FROM "thredded_user_topic_read_states" WHERE "thredded_user_topic_read_states"."user_id" = $1 AND "thredded_user_topic_read_states"."postable_id" = 1[0m  [["user_id", 2]]
+  [1m[36mThredded::UserTopicFollow Load (0.6ms)[0m  [1m[34mSELECT "thredded_user_topic_follows".* FROM "thredded_user_topic_follows" WHERE "thredded_user_topic_follows"."user_id" = $1 AND "thredded_user_topic_follows"."topic_id" = 1[0m  [["user_id", 2]]
+  Rendering /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/topics/index.html.erb within layouts/application
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_breadcrumbs.html.erb (1.7ms) [cache miss]
+  [1m[36mThredded::Category Load (4.7ms)[0m  [1m[34mSELECT "thredded_categories".* FROM "thredded_categories" WHERE "thredded_categories"."messageboard_id" = $1[0m  [["messageboard_id", 1]]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/posts_common/form/_before_content.html.erb (0.3ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/posts_common/form/_after_content.html.erb (0.4ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/posts_common/form/_content_field.html.erb (7.7ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/posts_common/form/_preview_area.html.erb (1.2ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/posts_common/form/_content.html.erb (16.0ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/topics/_topic_form_admin_options.html.erb (1.1ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/topics/_form.html.erb (34.8ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/users/_link.html.erb (1.0ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/users/_link.html.erb (0.3ms) [cache miss]
+  Rendered collection of /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/topics/_topic.html.erb [1 times] (10.7ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "thredded_messageboards"."id" FROM "thredded_messageboards"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "thredded_posts" WHERE "thredded_posts"."messageboard_id" IN (2, 1) AND "thredded_posts"."moderation_state" = $1[0m  [["moderation_state", 0]]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/nav/_moderation.html.erb (4.8ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/nav/_notification_preferences.html.erb (3.3ms) [cache miss]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "thredded_private_topics" INNER JOIN "thredded_private_users" ON "thredded_private_users"."private_topic_id" = "thredded_private_topics"."id" LEFT OUTER JOIN "thredded_user_private_topic_read_states" ON "thredded_private_topics"."id" = "thredded_user_private_topic_read_states"."postable_id" AND "thredded_user_private_topic_read_states"."user_id" = 2 WHERE "thredded_private_users"."user_id" = $1 AND ("thredded_user_private_topic_read_states"."id" IS NULL OR "thredded_user_private_topic_read_states"."read_at" < "thredded_private_topics"."last_post_at")[0m  [["user_id", 2]]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/nav/_private_topics.html.erb (9.1ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/search/_form.html.erb (2.9ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_nav.html.erb (32.5ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_header.html.erb (35.1ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_flash_messages.html.erb (1.4ms) [cache miss]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "thredded_user_details" ON "users"."id" = "thredded_user_details"."user_id" INNER JOIN "thredded_messageboard_users" ON "thredded_user_details"."id" = "thredded_messageboard_users"."thredded_user_detail_id" WHERE "thredded_messageboard_users"."thredded_messageboard_id" = $1 AND ("thredded_messageboard_users"."last_seen_at" > '2017-05-27 02:22:44.566676')[0m  [["thredded_messageboard_id", 1]]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_currently_online.html.erb (5.1ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_page.html.erb (54.7ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/topics/index.html.erb within layouts/application (126.1ms)
+  Rendered shared/_header.html.erb (4.9ms) [cache miss]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [b37f4499-c8b1-41ca-8f49-13108093ba0f] Performing Thredded::ActivityUpdaterJob (Job ID: b37f4499-c8b1-41ca-8f49-13108093ba0f) from Async(default) with arguments: 2, 1
+[ActiveJob] Enqueued Thredded::ActivityUpdaterJob (Job ID: b37f4499-c8b1-41ca-8f49-13108093ba0f) to Async(default) with arguments: 2, 1
+Completed 200 OK in 284ms (Views: 242.6ms | ActiveRecord: 13.1ms)
+
+
+[ActiveJob] [Thredded::ActivityUpdaterJob] [b37f4499-c8b1-41ca-8f49-13108093ba0f]   [1m[36mThredded::UserDetail Load (1.6ms)[0m  [1m[34mSELECT  "thredded_user_details".* FROM "thredded_user_details" WHERE "thredded_user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [b37f4499-c8b1-41ca-8f49-13108093ba0f]   [1m[35m (12.1ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [Thredded::ActivityUpdaterJob] [b37f4499-c8b1-41ca-8f49-13108093ba0f]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [b37f4499-c8b1-41ca-8f49-13108093ba0f]   [1m[36mThredded::UserDetail Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "thredded_user_details" WHERE "thredded_user_details"."user_id" = $1 AND ("thredded_user_details"."id" != $2) LIMIT $3[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [b37f4499-c8b1-41ca-8f49-13108093ba0f]   [1m[35mSQL (12.8ms)[0m  [1m[33mUPDATE "thredded_user_details" SET "last_seen_at" = $1, "updated_at" = $2 WHERE "thredded_user_details"."id" = $3[0m  [["last_seen_at", "2017-05-27 02:27:44.688947"], ["updated_at", "2017-05-27 02:27:44.711603"], ["id", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [b37f4499-c8b1-41ca-8f49-13108093ba0f]   [1m[35m (14.8ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [Thredded::ActivityUpdaterJob] [b37f4499-c8b1-41ca-8f49-13108093ba0f]   [1m[36mThredded::MessageboardUser Load (54.4ms)[0m  [1m[34mSELECT  "thredded_messageboard_users".* FROM "thredded_messageboard_users" WHERE "thredded_messageboard_users"."thredded_messageboard_id" = $1 AND "thredded_messageboard_users"."thredded_user_detail_id" = $2 LIMIT $3[0m  [["thredded_messageboard_id", 1], ["thredded_user_detail_id", 1], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [b37f4499-c8b1-41ca-8f49-13108093ba0f]   [1m[35m (14.5ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [Thredded::ActivityUpdaterJob] [b37f4499-c8b1-41ca-8f49-13108093ba0f]   [1m[36mThredded::Messageboard Load (6.5ms)[0m  [1m[34mSELECT  "thredded_messageboards".* FROM "thredded_messageboards" WHERE "thredded_messageboards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [b37f4499-c8b1-41ca-8f49-13108093ba0f]   [1m[36mThredded::UserDetail Load (1.7ms)[0m  [1m[34mSELECT  "thredded_user_details".* FROM "thredded_user_details" WHERE "thredded_user_details"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [b37f4499-c8b1-41ca-8f49-13108093ba0f]   [1m[35mSQL (6.0ms)[0m  [1m[33mUPDATE "thredded_messageboard_users" SET "last_seen_at" = $1 WHERE "thredded_messageboard_users"."id" = $2[0m  [["last_seen_at", "2017-05-27 02:27:44.688947"], ["id", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [b37f4499-c8b1-41ca-8f49-13108093ba0f]   [1m[35m (12.2ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [Thredded::ActivityUpdaterJob] [b37f4499-c8b1-41ca-8f49-13108093ba0f] Performed Thredded::ActivityUpdaterJob (Job ID: b37f4499-c8b1-41ca-8f49-13108093ba0f) from Async(default) in 160.36ms
+Started GET "/forum/general" for 127.0.0.1 at 2017-05-26 21:27:46 -0500
+Processing by Thredded::TopicsController#index as HTML
+  Parameters: {"messageboard_id"=>"general"}
+  [1m[36mThredded::Messageboard Load (1.5ms)[0m  [1m[34mSELECT  "thredded_messageboards".* FROM "thredded_messageboards" WHERE "thredded_messageboards"."slug" = $1 LIMIT $2[0m  [["slug", "general"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mThredded::Messageboard Load (4.3ms)[0m  [1m[34mSELECT "thredded_messageboards".* FROM "thredded_messageboards"[0m
+  [1m[36mThredded::Topic Load (1.7ms)[0m  [1m[34mSELECT  "thredded_topics".* FROM "thredded_topics" WHERE "thredded_topics"."messageboard_id" = $1 AND (("thredded_topics"."moderation_state" != 2 OR "thredded_topics"."user_id" = 2) OR "thredded_topics"."messageboard_id" IN (2, 1)) ORDER BY "thredded_topics"."sticky" DESC, "thredded_topics"."last_post_at" DESC, "thredded_topics"."id" DESC LIMIT $2 OFFSET $3[0m  [["messageboard_id", 1], ["LIMIT", 50], ["OFFSET", 0]]
+  [1m[36mThredded::TopicCategory Load (1.2ms)[0m  [1m[34mSELECT "thredded_topic_categories".* FROM "thredded_topic_categories" WHERE "thredded_topic_categories"."topic_id" = 1[0m
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2[0m
+  [1m[36mThredded::UserTopicReadState Load (0.5ms)[0m  [1m[34mSELECT "thredded_user_topic_read_states".* FROM "thredded_user_topic_read_states" WHERE "thredded_user_topic_read_states"."user_id" = $1 AND "thredded_user_topic_read_states"."postable_id" = 1[0m  [["user_id", 2]]
+  [1m[36mThredded::UserTopicFollow Load (0.5ms)[0m  [1m[34mSELECT "thredded_user_topic_follows".* FROM "thredded_user_topic_follows" WHERE "thredded_user_topic_follows"."user_id" = $1 AND "thredded_user_topic_follows"."topic_id" = 1[0m  [["user_id", 2]]
+  Rendering /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/topics/index.html.erb within layouts/application
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_breadcrumbs.html.erb (1.7ms) [cache miss]
+  [1m[36mThredded::Category Load (0.2ms)[0m  [1m[34mSELECT "thredded_categories".* FROM "thredded_categories" WHERE "thredded_categories"."messageboard_id" = $1[0m  [["messageboard_id", 1]]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/posts_common/form/_before_content.html.erb (0.4ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/posts_common/form/_after_content.html.erb (0.6ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/posts_common/form/_content_field.html.erb (8.9ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/posts_common/form/_preview_area.html.erb (1.6ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/posts_common/form/_content.html.erb (22.1ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/topics/_topic_form_admin_options.html.erb (6.0ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/topics/_form.html.erb (42.3ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/users/_link.html.erb (1.1ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/users/_link.html.erb (0.3ms) [cache miss]
+  Rendered collection of /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/topics/_topic.html.erb [1 times] (13.5ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "thredded_messageboards"."id" FROM "thredded_messageboards"[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "thredded_posts" WHERE "thredded_posts"."messageboard_id" IN (2, 1) AND "thredded_posts"."moderation_state" = $1[0m  [["moderation_state", 0]]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/nav/_moderation.html.erb (6.0ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/nav/_notification_preferences.html.erb (3.3ms) [cache miss]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "thredded_private_topics" INNER JOIN "thredded_private_users" ON "thredded_private_users"."private_topic_id" = "thredded_private_topics"."id" LEFT OUTER JOIN "thredded_user_private_topic_read_states" ON "thredded_private_topics"."id" = "thredded_user_private_topic_read_states"."postable_id" AND "thredded_user_private_topic_read_states"."user_id" = 2 WHERE "thredded_private_users"."user_id" = $1 AND ("thredded_user_private_topic_read_states"."id" IS NULL OR "thredded_user_private_topic_read_states"."read_at" < "thredded_private_topics"."last_post_at")[0m  [["user_id", 2]]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/nav/_private_topics.html.erb (10.8ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/search/_form.html.erb (1.5ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_nav.html.erb (34.8ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_header.html.erb (37.3ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_flash_messages.html.erb (0.5ms) [cache miss]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "thredded_user_details" ON "users"."id" = "thredded_user_details"."user_id" INNER JOIN "thredded_messageboard_users" ON "thredded_user_details"."id" = "thredded_messageboard_users"."thredded_user_detail_id" WHERE "thredded_messageboard_users"."thredded_messageboard_id" = $1 AND ("thredded_messageboard_users"."last_seen_at" > '2017-05-27 02:22:46.318874')[0m  [["thredded_messageboard_id", 1]]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_currently_online.html.erb (6.7ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_page.html.erb (60.6ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/topics/index.html.erb within layouts/application (142.9ms)
+  Rendered shared/_header.html.erb (5.7ms) [cache miss]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [170c754d-294e-4c76-8aad-5d689d188846] Performing Thredded::ActivityUpdaterJob (Job ID: 170c754d-294e-4c76-8aad-5d689d188846) from Async(default) with arguments: 2, 1
+[ActiveJob] Enqueued Thredded::ActivityUpdaterJob (Job ID: 170c754d-294e-4c76-8aad-5d689d188846) to Async(default) with arguments: 2, 1
+Completed 200 OK in 302ms (Views: 251.0ms | ActiveRecord: 16.1ms)
+
+
+[ActiveJob] [Thredded::ActivityUpdaterJob] [170c754d-294e-4c76-8aad-5d689d188846]   [1m[36mThredded::UserDetail Load (0.7ms)[0m  [1m[34mSELECT  "thredded_user_details".* FROM "thredded_user_details" WHERE "thredded_user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [170c754d-294e-4c76-8aad-5d689d188846]   [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [Thredded::ActivityUpdaterJob] [170c754d-294e-4c76-8aad-5d689d188846]   [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [170c754d-294e-4c76-8aad-5d689d188846]   [1m[36mThredded::UserDetail Exists (2.5ms)[0m  [1m[34mSELECT  1 AS one FROM "thredded_user_details" WHERE "thredded_user_details"."user_id" = $1 AND ("thredded_user_details"."id" != $2) LIMIT $3[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [170c754d-294e-4c76-8aad-5d689d188846]   [1m[35mSQL (100.7ms)[0m  [1m[33mUPDATE "thredded_user_details" SET "last_seen_at" = $1, "updated_at" = $2 WHERE "thredded_user_details"."id" = $3[0m  [["last_seen_at", "2017-05-27 02:27:46.430197"], ["updated_at", "2017-05-27 02:27:46.447528"], ["id", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [170c754d-294e-4c76-8aad-5d689d188846]   [1m[35m (9.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [Thredded::ActivityUpdaterJob] [170c754d-294e-4c76-8aad-5d689d188846]   [1m[36mThredded::MessageboardUser Load (21.1ms)[0m  [1m[34mSELECT  "thredded_messageboard_users".* FROM "thredded_messageboard_users" WHERE "thredded_messageboard_users"."thredded_messageboard_id" = $1 AND "thredded_messageboard_users"."thredded_user_detail_id" = $2 LIMIT $3[0m  [["thredded_messageboard_id", 1], ["thredded_user_detail_id", 1], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [170c754d-294e-4c76-8aad-5d689d188846]   [1m[35m (3.1ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [Thredded::ActivityUpdaterJob] [170c754d-294e-4c76-8aad-5d689d188846]   [1m[36mThredded::Messageboard Load (8.6ms)[0m  [1m[34mSELECT  "thredded_messageboards".* FROM "thredded_messageboards" WHERE "thredded_messageboards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [170c754d-294e-4c76-8aad-5d689d188846]   [1m[36mThredded::UserDetail Load (0.8ms)[0m  [1m[34mSELECT  "thredded_user_details".* FROM "thredded_user_details" WHERE "thredded_user_details"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [170c754d-294e-4c76-8aad-5d689d188846]   [1m[35mSQL (5.7ms)[0m  [1m[33mUPDATE "thredded_messageboard_users" SET "last_seen_at" = $1 WHERE "thredded_messageboard_users"."id" = $2[0m  [["last_seen_at", "2017-05-27 02:27:46.430197"], ["id", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [170c754d-294e-4c76-8aad-5d689d188846]   [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [Thredded::ActivityUpdaterJob] [170c754d-294e-4c76-8aad-5d689d188846] Performed Thredded::ActivityUpdaterJob (Job ID: 170c754d-294e-4c76-8aad-5d689d188846) from Async(default) in 193.12ms
+Started GET "/forum/general" for 127.0.0.1 at 2017-05-26 21:29:07 -0500
+Processing by Thredded::TopicsController#index as HTML
+  Parameters: {"messageboard_id"=>"general"}
+  [1m[36mThredded::Messageboard Load (0.6ms)[0m  [1m[34mSELECT  "thredded_messageboards".* FROM "thredded_messageboards" WHERE "thredded_messageboards"."slug" = $1 LIMIT $2[0m  [["slug", "general"], ["LIMIT", 1]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mThredded::Messageboard Load (0.4ms)[0m  [1m[34mSELECT "thredded_messageboards".* FROM "thredded_messageboards"[0m
+  [1m[36mThredded::Topic Load (0.8ms)[0m  [1m[34mSELECT  "thredded_topics".* FROM "thredded_topics" WHERE "thredded_topics"."messageboard_id" = $1 AND (("thredded_topics"."moderation_state" != 2 OR "thredded_topics"."user_id" = 2) OR "thredded_topics"."messageboard_id" IN (2, 1)) ORDER BY "thredded_topics"."sticky" DESC, "thredded_topics"."last_post_at" DESC, "thredded_topics"."id" DESC LIMIT $2 OFFSET $3[0m  [["messageboard_id", 1], ["LIMIT", 50], ["OFFSET", 0]]
+  [1m[36mThredded::TopicCategory Load (0.4ms)[0m  [1m[34mSELECT "thredded_topic_categories".* FROM "thredded_topic_categories" WHERE "thredded_topic_categories"."topic_id" = 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2[0m
+  [1m[36mThredded::UserTopicReadState Load (0.3ms)[0m  [1m[34mSELECT "thredded_user_topic_read_states".* FROM "thredded_user_topic_read_states" WHERE "thredded_user_topic_read_states"."user_id" = $1 AND "thredded_user_topic_read_states"."postable_id" = 1[0m  [["user_id", 2]]
+  [1m[36mThredded::UserTopicFollow Load (0.6ms)[0m  [1m[34mSELECT "thredded_user_topic_follows".* FROM "thredded_user_topic_follows" WHERE "thredded_user_topic_follows"."user_id" = $1 AND "thredded_user_topic_follows"."topic_id" = 1[0m  [["user_id", 2]]
+  Rendering /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/topics/index.html.erb within layouts/application
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_breadcrumbs.html.erb (1.0ms) [cache miss]
+  [1m[36mThredded::Category Load (0.2ms)[0m  [1m[34mSELECT "thredded_categories".* FROM "thredded_categories" WHERE "thredded_categories"."messageboard_id" = $1[0m  [["messageboard_id", 1]]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/posts_common/form/_before_content.html.erb (0.2ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/posts_common/form/_after_content.html.erb (0.3ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/posts_common/form/_content_field.html.erb (6.3ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/posts_common/form/_preview_area.html.erb (0.7ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/posts_common/form/_content.html.erb (12.8ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/topics/_topic_form_admin_options.html.erb (1.0ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/topics/_form.html.erb (23.4ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/users/_link.html.erb (0.8ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/users/_link.html.erb (0.2ms) [cache miss]
+  Rendered collection of /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/topics/_topic.html.erb [1 times] (9.2ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "thredded_messageboards"."id" FROM "thredded_messageboards"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "thredded_posts" WHERE "thredded_posts"."messageboard_id" IN (2, 1) AND "thredded_posts"."moderation_state" = $1[0m  [["moderation_state", 0]]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/nav/_moderation.html.erb (4.4ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/nav/_notification_preferences.html.erb (3.5ms) [cache miss]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "thredded_private_topics" INNER JOIN "thredded_private_users" ON "thredded_private_users"."private_topic_id" = "thredded_private_topics"."id" LEFT OUTER JOIN "thredded_user_private_topic_read_states" ON "thredded_private_topics"."id" = "thredded_user_private_topic_read_states"."postable_id" AND "thredded_user_private_topic_read_states"."user_id" = 2 WHERE "thredded_private_users"."user_id" = $1 AND ("thredded_user_private_topic_read_states"."id" IS NULL OR "thredded_user_private_topic_read_states"."read_at" < "thredded_private_topics"."last_post_at")[0m  [["user_id", 2]]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/nav/_private_topics.html.erb (5.6ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/search/_form.html.erb (1.4ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_nav.html.erb (26.2ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_header.html.erb (28.9ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_flash_messages.html.erb (0.5ms) [cache miss]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "thredded_user_details" ON "users"."id" = "thredded_user_details"."user_id" INNER JOIN "thredded_messageboard_users" ON "thredded_user_details"."id" = "thredded_messageboard_users"."thredded_user_detail_id" WHERE "thredded_messageboard_users"."thredded_messageboard_id" = $1 AND ("thredded_messageboard_users"."last_seen_at" > '2017-05-27 02:24:07.578792')[0m  [["thredded_messageboard_id", 1]]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_currently_online.html.erb (3.7ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_page.html.erb (44.1ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/topics/index.html.erb within layouts/application (100.7ms)
+  Rendered shared/_header.html.erb (4.3ms) [cache miss]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [0bfd122e-962d-4e72-abdc-8385c5c0baac] Performing Thredded::ActivityUpdaterJob (Job ID: 0bfd122e-962d-4e72-abdc-8385c5c0baac) from Async(default) with arguments: 2, 1
+[ActiveJob] Enqueued Thredded::ActivityUpdaterJob (Job ID: 0bfd122e-962d-4e72-abdc-8385c5c0baac) to Async(default) with arguments: 2, 1
+Completed 200 OK in 341ms (Views: 292.4ms | ActiveRecord: 7.3ms)
+
+
+[ActiveJob] [Thredded::ActivityUpdaterJob] [0bfd122e-962d-4e72-abdc-8385c5c0baac]   [1m[36mThredded::UserDetail Load (0.9ms)[0m  [1m[34mSELECT  "thredded_user_details".* FROM "thredded_user_details" WHERE "thredded_user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [0bfd122e-962d-4e72-abdc-8385c5c0baac]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [Thredded::ActivityUpdaterJob] [0bfd122e-962d-4e72-abdc-8385c5c0baac]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [0bfd122e-962d-4e72-abdc-8385c5c0baac]   [1m[36mThredded::UserDetail Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "thredded_user_details" WHERE "thredded_user_details"."user_id" = $1 AND ("thredded_user_details"."id" != $2) LIMIT $3[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [0bfd122e-962d-4e72-abdc-8385c5c0baac]   [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "thredded_user_details" SET "last_seen_at" = $1, "updated_at" = $2 WHERE "thredded_user_details"."id" = $3[0m  [["last_seen_at", "2017-05-27 02:29:07.770133"], ["updated_at", "2017-05-27 02:29:07.779712"], ["id", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [0bfd122e-962d-4e72-abdc-8385c5c0baac]   [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [Thredded::ActivityUpdaterJob] [0bfd122e-962d-4e72-abdc-8385c5c0baac]   [1m[36mThredded::MessageboardUser Load (0.5ms)[0m  [1m[34mSELECT  "thredded_messageboard_users".* FROM "thredded_messageboard_users" WHERE "thredded_messageboard_users"."thredded_messageboard_id" = $1 AND "thredded_messageboard_users"."thredded_user_detail_id" = $2 LIMIT $3[0m  [["thredded_messageboard_id", 1], ["thredded_user_detail_id", 1], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [0bfd122e-962d-4e72-abdc-8385c5c0baac]   [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [Thredded::ActivityUpdaterJob] [0bfd122e-962d-4e72-abdc-8385c5c0baac]   [1m[36mThredded::Messageboard Load (6.1ms)[0m  [1m[34mSELECT  "thredded_messageboards".* FROM "thredded_messageboards" WHERE "thredded_messageboards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [0bfd122e-962d-4e72-abdc-8385c5c0baac]   [1m[36mThredded::UserDetail Load (7.4ms)[0m  [1m[34mSELECT  "thredded_user_details".* FROM "thredded_user_details" WHERE "thredded_user_details"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [0bfd122e-962d-4e72-abdc-8385c5c0baac]   [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "thredded_messageboard_users" SET "last_seen_at" = $1 WHERE "thredded_messageboard_users"."id" = $2[0m  [["last_seen_at", "2017-05-27 02:29:07.770133"], ["id", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [0bfd122e-962d-4e72-abdc-8385c5c0baac]   [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [Thredded::ActivityUpdaterJob] [0bfd122e-962d-4e72-abdc-8385c5c0baac] Performed Thredded::ActivityUpdaterJob (Job ID: 0bfd122e-962d-4e72-abdc-8385c5c0baac) from Async(default) in 50.61ms
+Started GET "/forum/general" for 127.0.0.1 at 2017-05-26 21:29:11 -0500
+Processing by Thredded::TopicsController#index as HTML
+  Parameters: {"messageboard_id"=>"general"}
+  [1m[36mThredded::Messageboard Load (1.0ms)[0m  [1m[34mSELECT  "thredded_messageboards".* FROM "thredded_messageboards" WHERE "thredded_messageboards"."slug" = $1 LIMIT $2[0m  [["slug", "general"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mThredded::Messageboard Load (0.5ms)[0m  [1m[34mSELECT "thredded_messageboards".* FROM "thredded_messageboards"[0m
+  [1m[36mThredded::Topic Load (1.6ms)[0m  [1m[34mSELECT  "thredded_topics".* FROM "thredded_topics" WHERE "thredded_topics"."messageboard_id" = $1 AND (("thredded_topics"."moderation_state" != 2 OR "thredded_topics"."user_id" = 2) OR "thredded_topics"."messageboard_id" IN (2, 1)) ORDER BY "thredded_topics"."sticky" DESC, "thredded_topics"."last_post_at" DESC, "thredded_topics"."id" DESC LIMIT $2 OFFSET $3[0m  [["messageboard_id", 1], ["LIMIT", 50], ["OFFSET", 0]]
+  [1m[36mThredded::TopicCategory Load (0.5ms)[0m  [1m[34mSELECT "thredded_topic_categories".* FROM "thredded_topic_categories" WHERE "thredded_topic_categories"."topic_id" = 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 2[0m
+  [1m[36mThredded::UserTopicReadState Load (0.8ms)[0m  [1m[34mSELECT "thredded_user_topic_read_states".* FROM "thredded_user_topic_read_states" WHERE "thredded_user_topic_read_states"."user_id" = $1 AND "thredded_user_topic_read_states"."postable_id" = 1[0m  [["user_id", 2]]
+  [1m[36mThredded::UserTopicFollow Load (1.7ms)[0m  [1m[34mSELECT "thredded_user_topic_follows".* FROM "thredded_user_topic_follows" WHERE "thredded_user_topic_follows"."user_id" = $1 AND "thredded_user_topic_follows"."topic_id" = 1[0m  [["user_id", 2]]
+  Rendering /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/topics/index.html.erb within layouts/application
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_breadcrumbs.html.erb (1.0ms) [cache miss]
+  [1m[36mThredded::Category Load (0.3ms)[0m  [1m[34mSELECT "thredded_categories".* FROM "thredded_categories" WHERE "thredded_categories"."messageboard_id" = $1[0m  [["messageboard_id", 1]]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/posts_common/form/_before_content.html.erb (0.4ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/posts_common/form/_after_content.html.erb (0.4ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/posts_common/form/_content_field.html.erb (6.7ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/posts_common/form/_preview_area.html.erb (1.1ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/posts_common/form/_content.html.erb (15.0ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/topics/_topic_form_admin_options.html.erb (1.1ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/topics/_form.html.erb (26.9ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/users/_link.html.erb (0.8ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/users/_link.html.erb (0.2ms) [cache miss]
+  Rendered collection of /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/topics/_topic.html.erb [1 times] (9.0ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "thredded_messageboards"."id" FROM "thredded_messageboards"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "thredded_posts" WHERE "thredded_posts"."messageboard_id" IN (2, 1) AND "thredded_posts"."moderation_state" = $1[0m  [["moderation_state", 0]]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/nav/_moderation.html.erb (4.6ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/nav/_notification_preferences.html.erb (2.7ms) [cache miss]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "thredded_private_topics" INNER JOIN "thredded_private_users" ON "thredded_private_users"."private_topic_id" = "thredded_private_topics"."id" LEFT OUTER JOIN "thredded_user_private_topic_read_states" ON "thredded_private_topics"."id" = "thredded_user_private_topic_read_states"."postable_id" AND "thredded_user_private_topic_read_states"."user_id" = 2 WHERE "thredded_private_users"."user_id" = $1 AND ("thredded_user_private_topic_read_states"."id" IS NULL OR "thredded_user_private_topic_read_states"."read_at" < "thredded_private_topics"."last_post_at")[0m  [["user_id", 2]]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/nav/_private_topics.html.erb (5.2ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/search/_form.html.erb (1.6ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_nav.html.erb (26.2ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_header.html.erb (29.3ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_flash_messages.html.erb (0.6ms) [cache miss]
+  [1m[36mUser Load (17.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "thredded_user_details" ON "users"."id" = "thredded_user_details"."user_id" INNER JOIN "thredded_messageboard_users" ON "thredded_user_details"."id" = "thredded_messageboard_users"."thredded_user_detail_id" WHERE "thredded_messageboard_users"."thredded_messageboard_id" = $1 AND ("thredded_messageboard_users"."last_seen_at" > '2017-05-27 02:24:11.182256')[0m  [["thredded_messageboard_id", 1]]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_currently_online.html.erb (27.5ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/shared/_page.html.erb (67.6ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.3/app/views/thredded/topics/index.html.erb within layouts/application (129.5ms)
+  Rendered shared/_header.html.erb (4.9ms) [cache miss]
+[ActiveJob] Enqueued Thredded::ActivityUpdaterJob (Job ID: 4229ffea-cb5a-4a25-b14b-449643962f41) to Async(default) with arguments: 2, 1
+[ActiveJob] [Thredded::ActivityUpdaterJob] [4229ffea-cb5a-4a25-b14b-449643962f41] Performing Thredded::ActivityUpdaterJob (Job ID: 4229ffea-cb5a-4a25-b14b-449643962f41) from Async(default) with arguments: 2, 1
+Completed 200 OK in 351ms (Views: 297.6ms | ActiveRecord: 26.2ms)
+
+
+[ActiveJob] [Thredded::ActivityUpdaterJob] [4229ffea-cb5a-4a25-b14b-449643962f41]   [1m[36mThredded::UserDetail Load (0.6ms)[0m  [1m[34mSELECT  "thredded_user_details".* FROM "thredded_user_details" WHERE "thredded_user_details"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [4229ffea-cb5a-4a25-b14b-449643962f41]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [Thredded::ActivityUpdaterJob] [4229ffea-cb5a-4a25-b14b-449643962f41]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [4229ffea-cb5a-4a25-b14b-449643962f41]   [1m[36mThredded::UserDetail Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "thredded_user_details" WHERE "thredded_user_details"."user_id" = $1 AND ("thredded_user_details"."id" != $2) LIMIT $3[0m  [["user_id", 2], ["id", 1], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [4229ffea-cb5a-4a25-b14b-449643962f41]   [1m[35mSQL (1.5ms)[0m  [1m[33mUPDATE "thredded_user_details" SET "last_seen_at" = $1, "updated_at" = $2 WHERE "thredded_user_details"."id" = $3[0m  [["last_seen_at", "2017-05-27 02:29:11.395162"], ["updated_at", "2017-05-27 02:29:11.404472"], ["id", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [4229ffea-cb5a-4a25-b14b-449643962f41]   [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [Thredded::ActivityUpdaterJob] [4229ffea-cb5a-4a25-b14b-449643962f41]   [1m[36mThredded::MessageboardUser Load (3.8ms)[0m  [1m[34mSELECT  "thredded_messageboard_users".* FROM "thredded_messageboard_users" WHERE "thredded_messageboard_users"."thredded_messageboard_id" = $1 AND "thredded_messageboard_users"."thredded_user_detail_id" = $2 LIMIT $3[0m  [["thredded_messageboard_id", 1], ["thredded_user_detail_id", 1], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [4229ffea-cb5a-4a25-b14b-449643962f41]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [Thredded::ActivityUpdaterJob] [4229ffea-cb5a-4a25-b14b-449643962f41]   [1m[36mThredded::Messageboard Load (0.4ms)[0m  [1m[34mSELECT  "thredded_messageboards".* FROM "thredded_messageboards" WHERE "thredded_messageboards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [4229ffea-cb5a-4a25-b14b-449643962f41]   [1m[36mThredded::UserDetail Load (0.3ms)[0m  [1m[34mSELECT  "thredded_user_details".* FROM "thredded_user_details" WHERE "thredded_user_details"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [4229ffea-cb5a-4a25-b14b-449643962f41]   [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE "thredded_messageboard_users" SET "last_seen_at" = $1 WHERE "thredded_messageboard_users"."id" = $2[0m  [["last_seen_at", "2017-05-27 02:29:11.395162"], ["id", 1]]
+[ActiveJob] [Thredded::ActivityUpdaterJob] [4229ffea-cb5a-4a25-b14b-449643962f41]   [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [Thredded::ActivityUpdaterJob] [4229ffea-cb5a-4a25-b14b-449643962f41] Performed Thredded::ActivityUpdaterJob (Job ID: 4229ffea-cb5a-4a25-b14b-449643962f41) from Async(default) in 39.46ms
