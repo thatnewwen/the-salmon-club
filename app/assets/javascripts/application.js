@@ -14,4 +14,3 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require thredded
-//= require_tree .
