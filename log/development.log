@@ -8254,3 +8254,200 @@ Processing by Thredded::MessageboardsController#index as HTML
 Completed 200 OK in 244ms (Views: 165.8ms | ActiveRecord: 14.7ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-08-20 17:29:08 -0500
+Processing by HomeController#show as HTML
+  Rendering home/show.html.erb within layouts/application
+  Rendered home/show.html.erb within layouts/application (1.0ms)
+  Rendered shared/_header.html.erb (2.7ms) [cache miss]
+  Rendered shared/_flash_messages.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 112ms (Views: 107.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/forum/" for 127.0.0.1 at 2017-08-20 17:29:20 -0500
+Processing by Thredded::MessageboardsController#index as HTML
+  [1m[35mSQL (0.6ms)[0m  [1m[34mSELECT "thredded_messageboards"."id" AS t0_r0, "thredded_messageboards"."name" AS t0_r1, "thredded_messageboards"."slug" AS t0_r2, "thredded_messageboards"."description" AS t0_r3, "thredded_messageboards"."topics_count" AS t0_r4, "thredded_messageboards"."posts_count" AS t0_r5, "thredded_messageboards"."position" AS t0_r6, "thredded_messageboards"."last_topic_id" AS t0_r7, "thredded_messageboards"."messageboard_group_id" AS t0_r8, "thredded_messageboards"."created_at" AS t0_r9, "thredded_messageboards"."updated_at" AS t0_r10, "thredded_messageboard_groups"."id" AS t1_r0, "thredded_messageboard_groups"."name" AS t1_r1, "thredded_messageboard_groups"."position" AS t1_r2, "thredded_messageboard_groups"."created_at" AS t1_r3, "thredded_messageboard_groups"."updated_at" AS t1_r4 FROM "thredded_messageboards" LEFT OUTER JOIN "thredded_messageboard_groups" ON "thredded_messageboard_groups"."id" = "thredded_messageboards"."messageboard_group_id" ORDER BY coalesce(thredded_messageboard_groups.position, 0) asc, thredded_messageboard_groups.id asc, "thredded_messageboards"."position" ASC, "thredded_messageboards"."id" ASC[0m
+  Rendering /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/messageboards/index.html.erb within layouts/application
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_breadcrumbs.html.erb (1.1ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/nav/_moderation.html.erb (0.6ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/nav/_notification_preferences.html.erb (2.5ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/nav/_private_topics.html.erb (3.5ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/search/_form.html.erb (1.8ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_nav.html.erb (19.7ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_header.html.erb (23.2ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_flash_messages.html.erb (0.6ms) [cache miss]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "thredded_user_details" ON "thredded_user_details"."user_id" = "users"."id" WHERE ("thredded_user_details"."last_seen_at" > '2017-08-20 22:24:20.290416')[0m
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_currently_online.html.erb (3.2ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_page.html.erb (35.5ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/messageboards/index.html.erb within layouts/application (42.4ms)
+  Rendered shared/_header.html.erb (4.6ms) [cache miss]
+Completed 200 OK in 144ms (Views: 134.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/forum/" for 127.0.0.1 at 2017-08-20 17:29:31 -0500
+Processing by Thredded::MessageboardsController#index as HTML
+  [1m[35mSQL (0.5ms)[0m  [1m[34mSELECT "thredded_messageboards"."id" AS t0_r0, "thredded_messageboards"."name" AS t0_r1, "thredded_messageboards"."slug" AS t0_r2, "thredded_messageboards"."description" AS t0_r3, "thredded_messageboards"."topics_count" AS t0_r4, "thredded_messageboards"."posts_count" AS t0_r5, "thredded_messageboards"."position" AS t0_r6, "thredded_messageboards"."last_topic_id" AS t0_r7, "thredded_messageboards"."messageboard_group_id" AS t0_r8, "thredded_messageboards"."created_at" AS t0_r9, "thredded_messageboards"."updated_at" AS t0_r10, "thredded_messageboard_groups"."id" AS t1_r0, "thredded_messageboard_groups"."name" AS t1_r1, "thredded_messageboard_groups"."position" AS t1_r2, "thredded_messageboard_groups"."created_at" AS t1_r3, "thredded_messageboard_groups"."updated_at" AS t1_r4 FROM "thredded_messageboards" LEFT OUTER JOIN "thredded_messageboard_groups" ON "thredded_messageboard_groups"."id" = "thredded_messageboards"."messageboard_group_id" ORDER BY coalesce(thredded_messageboard_groups.position, 0) asc, thredded_messageboard_groups.id asc, "thredded_messageboards"."position" ASC, "thredded_messageboards"."id" ASC[0m
+  Rendering /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/messageboards/index.html.erb within layouts/application
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_breadcrumbs.html.erb (1.3ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/nav/_moderation.html.erb (0.7ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/nav/_notification_preferences.html.erb (2.6ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/nav/_private_topics.html.erb (2.5ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/search/_form.html.erb (1.2ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_nav.html.erb (18.3ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_header.html.erb (21.2ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_flash_messages.html.erb (0.5ms) [cache miss]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "thredded_user_details" ON "thredded_user_details"."user_id" = "users"."id" WHERE ("thredded_user_details"."last_seen_at" > '2017-08-20 22:24:31.806846')[0m
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_currently_online.html.erb (3.0ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_page.html.erb (32.1ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/messageboards/index.html.erb within layouts/application (40.9ms)
+  Rendered shared/_header.html.erb (3.3ms) [cache miss]
+Completed 200 OK in 137ms (Views: 129.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-20 17:29:33 -0500
+Processing by HomeController#show as HTML
+  Rendering home/show.html.erb within layouts/application
+  Rendered home/show.html.erb within layouts/application (0.9ms)
+  Rendered shared/_header.html.erb (4.5ms) [cache miss]
+  Rendered shared/_flash_messages.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 96ms (Views: 93.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-20 17:29:50 -0500
+Processing by HomeController#show as HTML
+  Rendering home/show.html.erb within layouts/application
+  Rendered home/show.html.erb within layouts/application (1.1ms)
+  Rendered shared/_header.html.erb (2.6ms) [cache miss]
+  Rendered shared/_flash_messages.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 105ms (Views: 102.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-20 17:30:13 -0500
+Processing by HomeController#show as HTML
+  Rendering home/show.html.erb within layouts/application
+  Rendered home/show.html.erb within layouts/application (1.0ms)
+  Rendered shared/_header.html.erb (5.4ms) [cache miss]
+  Rendered shared/_flash_messages.html.erb (0.8ms) [cache miss]
+Completed 200 OK in 116ms (Views: 113.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-20 17:31:26 -0500
+Processing by HomeController#show as HTML
+  Rendering home/show.html.erb within layouts/application
+  Rendered home/show.html.erb within layouts/application (0.9ms)
+  Rendered shared/_header.html.erb (5.4ms) [cache miss]
+  Rendered shared/_flash_messages.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 113ms (Views: 107.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-20 17:31:34 -0500
+Processing by HomeController#show as HTML
+  Rendering home/show.html.erb within layouts/application
+  Rendered home/show.html.erb within layouts/application (1.6ms)
+  Rendered shared/_header.html.erb (2.7ms) [cache miss]
+  Rendered shared/_flash_messages.html.erb (0.8ms) [cache miss]
+Completed 200 OK in 110ms (Views: 106.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-20 17:31:53 -0500
+Processing by HomeController#show as HTML
+  Rendering home/show.html.erb within layouts/application
+  Rendered home/show.html.erb within layouts/application (0.9ms)
+  Rendered shared/_header.html.erb (3.9ms) [cache miss]
+  Rendered shared/_flash_messages.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 115ms (Views: 112.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-20 17:32:40 -0500
+Processing by HomeController#show as HTML
+  Rendering home/show.html.erb within layouts/application
+  Rendered home/show.html.erb within layouts/application (2.4ms)
+  Rendered shared/_header.html.erb (5.0ms) [cache miss]
+  Rendered shared/_flash_messages.html.erb (0.8ms) [cache miss]
+Completed 200 OK in 118ms (Views: 115.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-20 17:32:48 -0500
+Processing by HomeController#show as HTML
+  Rendering home/show.html.erb within layouts/application
+  Rendered home/show.html.erb within layouts/application (2.7ms)
+  Rendered shared/_header.html.erb (5.0ms) [cache miss]
+  Rendered shared/_flash_messages.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 113ms (Views: 110.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-20 17:33:32 -0500
+Processing by HomeController#show as HTML
+  Rendering home/show.html.erb within layouts/application
+  Rendered home/show.html.erb within layouts/application (1.3ms)
+  Rendered shared/_header.html.erb (4.4ms) [cache miss]
+  Rendered shared/_flash_messages.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 121ms (Views: 119.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-20 17:33:46 -0500
+Processing by HomeController#show as HTML
+  Rendering home/show.html.erb within layouts/application
+  Rendered home/show.html.erb within layouts/application (0.8ms)
+  Rendered shared/_header.html.erb (3.2ms) [cache miss]
+  Rendered shared/_flash_messages.html.erb (0.9ms) [cache miss]
+Completed 200 OK in 105ms (Views: 102.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/forum/" for 127.0.0.1 at 2017-08-20 17:34:14 -0500
+Processing by Thredded::MessageboardsController#index as HTML
+  [1m[35mSQL (0.6ms)[0m  [1m[34mSELECT "thredded_messageboards"."id" AS t0_r0, "thredded_messageboards"."name" AS t0_r1, "thredded_messageboards"."slug" AS t0_r2, "thredded_messageboards"."description" AS t0_r3, "thredded_messageboards"."topics_count" AS t0_r4, "thredded_messageboards"."posts_count" AS t0_r5, "thredded_messageboards"."position" AS t0_r6, "thredded_messageboards"."last_topic_id" AS t0_r7, "thredded_messageboards"."messageboard_group_id" AS t0_r8, "thredded_messageboards"."created_at" AS t0_r9, "thredded_messageboards"."updated_at" AS t0_r10, "thredded_messageboard_groups"."id" AS t1_r0, "thredded_messageboard_groups"."name" AS t1_r1, "thredded_messageboard_groups"."position" AS t1_r2, "thredded_messageboard_groups"."created_at" AS t1_r3, "thredded_messageboard_groups"."updated_at" AS t1_r4 FROM "thredded_messageboards" LEFT OUTER JOIN "thredded_messageboard_groups" ON "thredded_messageboard_groups"."id" = "thredded_messageboards"."messageboard_group_id" ORDER BY coalesce(thredded_messageboard_groups.position, 0) asc, thredded_messageboard_groups.id asc, "thredded_messageboards"."position" ASC, "thredded_messageboards"."id" ASC[0m
+  Rendering /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/messageboards/index.html.erb within layouts/application
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_breadcrumbs.html.erb (2.2ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/nav/_moderation.html.erb (0.7ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/nav/_notification_preferences.html.erb (2.8ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/nav/_private_topics.html.erb (2.7ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/search/_form.html.erb (1.4ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_nav.html.erb (19.2ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_header.html.erb (21.7ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_flash_messages.html.erb (0.5ms) [cache miss]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "thredded_user_details" ON "thredded_user_details"."user_id" = "users"."id" WHERE ("thredded_user_details"."last_seen_at" > '2017-08-20 22:29:14.075677')[0m
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_currently_online.html.erb (2.5ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_page.html.erb (32.7ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/messageboards/index.html.erb within layouts/application (44.5ms)
+  Rendered shared/_header.html.erb (4.4ms) [cache miss]
+Completed 200 OK in 142ms (Views: 132.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-20 17:34:26 -0500
+Processing by HomeController#show as HTML
+  Rendering home/show.html.erb within layouts/application
+  Rendered home/show.html.erb within layouts/application (1.3ms)
+  Rendered shared/_header.html.erb (2.9ms) [cache miss]
+  Rendered shared/_flash_messages.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 109ms (Views: 106.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-20 17:34:33 -0500
+Processing by HomeController#show as HTML
+  Rendering home/show.html.erb within layouts/application
+  Rendered home/show.html.erb within layouts/application (1.0ms)
+  Rendered shared/_header.html.erb (2.9ms) [cache miss]
+  Rendered shared/_flash_messages.html.erb (0.5ms) [cache miss]
+Completed 200 OK in 102ms (Views: 99.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/forum/" for 127.0.0.1 at 2017-08-20 17:34:59 -0500
+Processing by Thredded::MessageboardsController#index as HTML
+  [1m[35mSQL (0.9ms)[0m  [1m[34mSELECT "thredded_messageboards"."id" AS t0_r0, "thredded_messageboards"."name" AS t0_r1, "thredded_messageboards"."slug" AS t0_r2, "thredded_messageboards"."description" AS t0_r3, "thredded_messageboards"."topics_count" AS t0_r4, "thredded_messageboards"."posts_count" AS t0_r5, "thredded_messageboards"."position" AS t0_r6, "thredded_messageboards"."last_topic_id" AS t0_r7, "thredded_messageboards"."messageboard_group_id" AS t0_r8, "thredded_messageboards"."created_at" AS t0_r9, "thredded_messageboards"."updated_at" AS t0_r10, "thredded_messageboard_groups"."id" AS t1_r0, "thredded_messageboard_groups"."name" AS t1_r1, "thredded_messageboard_groups"."position" AS t1_r2, "thredded_messageboard_groups"."created_at" AS t1_r3, "thredded_messageboard_groups"."updated_at" AS t1_r4 FROM "thredded_messageboards" LEFT OUTER JOIN "thredded_messageboard_groups" ON "thredded_messageboard_groups"."id" = "thredded_messageboards"."messageboard_group_id" ORDER BY coalesce(thredded_messageboard_groups.position, 0) asc, thredded_messageboard_groups.id asc, "thredded_messageboards"."position" ASC, "thredded_messageboards"."id" ASC[0m
+  Rendering /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/messageboards/index.html.erb within layouts/application
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_breadcrumbs.html.erb (1.5ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/nav/_moderation.html.erb (0.7ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/nav/_notification_preferences.html.erb (2.9ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/nav/_private_topics.html.erb (3.8ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/search/_form.html.erb (1.4ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_nav.html.erb (21.5ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_header.html.erb (24.4ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_flash_messages.html.erb (1.0ms) [cache miss]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "thredded_user_details" ON "thredded_user_details"."user_id" = "users"."id" WHERE ("thredded_user_details"."last_seen_at" > '2017-08-20 22:29:59.624630')[0m
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_currently_online.html.erb (3.6ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_page.html.erb (38.1ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/messageboards/index.html.erb within layouts/application (47.8ms)
+  Rendered shared/_header.html.erb (7.1ms) [cache miss]
+Completed 200 OK in 158ms (Views: 147.5ms | ActiveRecord: 1.5ms)
+
+
