@@ -7978,3 +7978,279 @@ Completed 200 OK in 26324ms (Views: 26007.5ms | ActiveRecord: 41.3ms)
 [ActiveJob] [Thredded::ActivityUpdaterJob] [8382e194-e81d-4461-8a79-06e3ab1ceec5]   [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "thredded_messageboard_users" SET "last_seen_at" = $1 WHERE "thredded_messageboard_users"."id" = $2[0m  [["last_seen_at", "2017-05-30 19:02:09.661872"], ["id", 1]]
 [ActiveJob] [Thredded::ActivityUpdaterJob] [8382e194-e81d-4461-8a79-06e3ab1ceec5]   [1m[35m (12.0ms)[0m  [1m[35mCOMMIT[0m
 [ActiveJob] [Thredded::ActivityUpdaterJob] [8382e194-e81d-4461-8a79-06e3ab1ceec5] Performed Thredded::ActivityUpdaterJob (Job ID: 8382e194-e81d-4461-8a79-06e3ab1ceec5) from Async(default) in 421.56ms
+Started GET "/" for 127.0.0.1 at 2017-08-20 17:25:50 -0500
+  
+ActiveRecord::NoDatabaseError (FATAL:  database "salmon_development" does not exist
+):
+  
+activerecord (5.1.1) lib/active_record/connection_adapters/postgresql_adapter.rb:705:in `rescue in connect'
+activerecord (5.1.1) lib/active_record/connection_adapters/postgresql_adapter.rb:701:in `connect'
+activerecord (5.1.1) lib/active_record/connection_adapters/postgresql_adapter.rb:220:in `initialize'
+activerecord (5.1.1) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `new'
+activerecord (5.1.1) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `postgresql_connection'
+activerecord (5.1.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:759:in `new_connection'
+activerecord (5.1.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:803:in `checkout_new_connection'
+activerecord (5.1.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:782:in `try_to_checkout_new_connection'
+activerecord (5.1.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:743:in `acquire_connection'
+activerecord (5.1.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:500:in `checkout'
+activerecord (5.1.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:374:in `connection'
+activerecord (5.1.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `retrieve_connection'
+activerecord (5.1.1) lib/active_record/connection_handling.rb:116:in `retrieve_connection'
+activerecord (5.1.1) lib/active_record/connection_handling.rb:88:in `connection'
+activerecord (5.1.1) lib/active_record/migration.rb:562:in `connection'
+activerecord (5.1.1) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.1) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+request_store (1.3.2) lib/request_store/middleware.rb:9:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2017-08-20 17:25:51 -0500
+  
+ActiveRecord::NoDatabaseError (FATAL:  database "salmon_development" does not exist
+):
+  
+activerecord (5.1.1) lib/active_record/connection_adapters/postgresql_adapter.rb:705:in `rescue in connect'
+activerecord (5.1.1) lib/active_record/connection_adapters/postgresql_adapter.rb:701:in `connect'
+activerecord (5.1.1) lib/active_record/connection_adapters/postgresql_adapter.rb:220:in `initialize'
+activerecord (5.1.1) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `new'
+activerecord (5.1.1) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `postgresql_connection'
+activerecord (5.1.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:759:in `new_connection'
+activerecord (5.1.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:803:in `checkout_new_connection'
+activerecord (5.1.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:782:in `try_to_checkout_new_connection'
+activerecord (5.1.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:743:in `acquire_connection'
+activerecord (5.1.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:500:in `checkout'
+activerecord (5.1.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:374:in `connection'
+activerecord (5.1.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `retrieve_connection'
+activerecord (5.1.1) lib/active_record/connection_handling.rb:116:in `retrieve_connection'
+activerecord (5.1.1) lib/active_record/connection_handling.rb:88:in `connection'
+activerecord (5.1.1) lib/active_record/migration.rb:562:in `connection'
+activerecord (5.1.1) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.1) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.1) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+request_store (1.3.2) lib/request_store/middleware.rb:9:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.1) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (25.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3136125207111294720);[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20170523214605)
+  [1m[35m (6.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (18.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170523214605"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateThredded (20170523214621)
+  [1m[35m (7.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.4ms)[0m  [1m[35mCREATE TABLE "friendly_id_slugs" ("id" bigserial primary key, "slug" character varying NOT NULL, "sluggable_id" integer NOT NULL, "sluggable_type" character varying(50), "scope" character varying, "created_at" timestamp)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_friendly_id_slugs_on_sluggable_id" ON "friendly_id_slugs"  ("sluggable_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_friendly_id_slugs_on_slug_and_sluggable_type" ON "friendly_id_slugs"  ("slug", "sluggable_type")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope" ON "friendly_id_slugs"  ("slug", "sluggable_type", "scope")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_friendly_id_slugs_on_sluggable_type" ON "friendly_id_slugs"  ("sluggable_type")[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "thredded_categories" ("id" bigserial primary key, "messageboard_id" bigint NOT NULL, "name" character varying(191) NOT NULL, "description" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "slug" character varying(191) NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_thredded_categories_on_messageboard_id_and_slug" ON "thredded_categories"  ("messageboard_id", "slug")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_thredded_categories_on_messageboard_id" ON "thredded_categories"  ("messageboard_id")[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[35mCREATE INDEX thredded_categories_name_ci ON "thredded_categories" (LOWER("name") text_pattern_ops)[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "thredded_messageboards" ("id" bigserial primary key, "name" character varying(191) NOT NULL, "slug" character varying(191), "description" text, "topics_count" integer DEFAULT 0, "posts_count" integer DEFAULT 0, "position" integer NOT NULL, "last_topic_id" bigint, "messageboard_group_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_thredded_messageboards_on_messageboard_group_id" ON "thredded_messageboards"  ("messageboard_group_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_thredded_messageboards_on_slug" ON "thredded_messageboards"  ("slug")[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "thredded_posts" ("id" bigserial primary key, "user_id" bigint, "content" text, "ip" character varying(255), "source" character varying(255) DEFAULT 'web', "postable_id" bigint NOT NULL, "messageboard_id" bigint NOT NULL, "moderation_state" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX  "index_thredded_posts_for_display" ON "thredded_posts"  ("moderation_state", "updated_at" ASC)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_thredded_posts_on_messageboard_id" ON "thredded_posts"  ("messageboard_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX  "index_thredded_posts_on_postable_id" ON "thredded_posts"  ("postable_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_thredded_posts_on_postable_id_and_postable_type" ON "thredded_posts"  ("postable_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_thredded_posts_on_user_id" ON "thredded_posts"  ("user_id")[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[35mCREATE INDEX thredded_posts_content_fts ON "thredded_posts" USING gist(to_tsvector('english', "content"))[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "thredded_private_posts" ("id" bigserial primary key, "user_id" bigint, "content" text, "postable_id" bigint NOT NULL, "ip" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "thredded_private_topics" ("id" bigserial primary key, "user_id" bigint, "last_user_id" bigint, "title" character varying(255) NOT NULL, "slug" character varying(191) NOT NULL, "posts_count" integer DEFAULT 0, "hash_id" character varying(191) NOT NULL, "last_post_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_thredded_private_topics_on_hash_id" ON "thredded_private_topics"  ("hash_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_thredded_private_topics_on_slug" ON "thredded_private_topics"  ("slug")[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "thredded_private_users" ("id" bigserial primary key, "private_topic_id" bigint, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_thredded_private_users_on_private_topic_id" ON "thredded_private_users"  ("private_topic_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_thredded_private_users_on_user_id" ON "thredded_private_users"  ("user_id")[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "thredded_topic_categories" ("id" bigserial primary key, "topic_id" bigint NOT NULL, "category_id" bigint NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_thredded_topic_categories_on_category_id" ON "thredded_topic_categories"  ("category_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_thredded_topic_categories_on_topic_id" ON "thredded_topic_categories"  ("topic_id")[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "thredded_topics" ("id" bigserial primary key, "user_id" bigint, "last_user_id" bigint, "title" character varying(255) NOT NULL, "slug" character varying(191) NOT NULL, "messageboard_id" bigint NOT NULL, "posts_count" integer DEFAULT 0 NOT NULL, "sticky" boolean DEFAULT 'f' NOT NULL, "locked" boolean DEFAULT 'f' NOT NULL, "hash_id" character varying(191) NOT NULL, "type" character varying(191), "moderation_state" integer NOT NULL, "last_post_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_thredded_topics_for_display" ON "thredded_topics"  ("moderation_state", "sticky" DESC, "updated_at" DESC)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_thredded_topics_on_hash_id" ON "thredded_topics"  ("hash_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_thredded_topics_on_slug" ON "thredded_topics"  ("slug")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "index_thredded_topics_on_messageboard_id" ON "thredded_topics"  ("messageboard_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_thredded_topics_on_user_id" ON "thredded_topics"  ("user_id")[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[35mCREATE INDEX thredded_topics_title_fts ON "thredded_topics" USING gist(to_tsvector('english', "title"))[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "thredded_user_details" ("id" bigserial primary key, "user_id" bigint NOT NULL, "latest_activity_at" timestamp, "posts_count" integer DEFAULT 0, "topics_count" integer DEFAULT 0, "last_seen_at" timestamp, "moderation_state" integer DEFAULT 0 NOT NULL, "moderation_state_changed_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_thredded_user_details_for_moderations" ON "thredded_user_details"  ("moderation_state", "moderation_state_changed_at" DESC)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX  "index_thredded_user_details_on_latest_activity_at" ON "thredded_user_details"  ("latest_activity_at")[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX  "index_thredded_user_details_on_user_id" ON "thredded_user_details"  ("user_id")[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "thredded_messageboard_users" ("id" bigserial primary key, "thredded_user_detail_id" bigint NOT NULL, "thredded_messageboard_id" bigint NOT NULL, "last_seen_at" timestamp NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_thredded_messageboard_users_primary" ON "thredded_messageboard_users"  ("thredded_messageboard_id", "thredded_user_detail_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_thredded_messageboard_users_for_recently_active" ON "thredded_messageboard_users"  ("thredded_messageboard_id", "last_seen_at")[0m
+  [1m[35m (3.2ms)[0m  [1m[35mALTER TABLE "thredded_messageboard_users" ADD CONSTRAINT "fk_rails_06e42c62f5"
+FOREIGN KEY ("thredded_user_detail_id")
+  REFERENCES "thredded_user_details" ("id")
+ ON DELETE CASCADE[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "thredded_messageboard_users" ADD CONSTRAINT "fk_rails_966803d714"
+FOREIGN KEY ("thredded_messageboard_id")
+  REFERENCES "thredded_messageboards" ("id")
+ ON DELETE CASCADE[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "thredded_user_preferences" ("id" bigserial primary key, "user_id" bigint NOT NULL, "follow_topics_on_mention" boolean DEFAULT 't' NOT NULL, "auto_follow_topics" boolean DEFAULT 'f' NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX  "index_thredded_user_preferences_on_user_id" ON "thredded_user_preferences"  ("user_id")[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "thredded_user_messageboard_preferences" ("id" bigserial primary key, "user_id" bigint NOT NULL, "messageboard_id" bigint NOT NULL, "follow_topics_on_mention" boolean DEFAULT 't' NOT NULL, "auto_follow_topics" boolean DEFAULT 'f' NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "thredded_user_messageboard_preferences_user_id_messageboard_id" ON "thredded_user_messageboard_preferences"  ("user_id", "messageboard_id")[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "thredded_user_topic_read_states" ("id" bigserial primary key, "user_id" bigint NOT NULL, "postable_id" bigint NOT NULL, "page" integer DEFAULT 1 NOT NULL, "read_at" timestamp NOT NULL)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "thredded_user_topic_read_states_user_postable" ON "thredded_user_topic_read_states"  ("user_id", "postable_id")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "thredded_user_private_topic_read_states" ("id" bigserial primary key, "user_id" bigint NOT NULL, "postable_id" bigint NOT NULL, "page" integer DEFAULT 1 NOT NULL, "read_at" timestamp NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "thredded_user_private_topic_read_states_user_postable" ON "thredded_user_private_topic_read_states"  ("user_id", "postable_id")[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "thredded_messageboard_groups" ("id" bigserial primary key, "name" character varying, "position" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "thredded_user_topic_follows" ("id" bigserial primary key, "user_id" bigint NOT NULL, "topic_id" bigint NOT NULL, "created_at" timestamp NOT NULL, "reason" smallint)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "thredded_user_topic_follows_user_topic" ON "thredded_user_topic_follows"  ("user_id", "topic_id")[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "thredded_post_moderation_records" ("id" bigserial primary key, "post_id" bigint, "messageboard_id" bigint, "post_content" text, "post_user_id" bigint, "post_user_name" text, "moderator_id" bigint, "moderation_state" integer NOT NULL, "previous_moderation_state" integer NOT NULL, "created_at" timestamp NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_thredded_moderation_records_for_display" ON "thredded_post_moderation_records"  ("messageboard_id", "created_at" DESC)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "thredded_notifications_for_private_topics" ("id" bigserial primary key, "user_id" bigint NOT NULL, "notifier_key" character varying(90) NOT NULL, "enabled" boolean DEFAULT 't' NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "thredded_notifications_for_private_topics_unique" ON "thredded_notifications_for_private_topics"  ("user_id", "notifier_key")[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "thredded_notifications_for_followed_topics" ("id" bigserial primary key, "user_id" bigint NOT NULL, "notifier_key" character varying(90) NOT NULL, "enabled" boolean DEFAULT 't' NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "thredded_notifications_for_followed_topics_unique" ON "thredded_notifications_for_followed_topics"  ("user_id", "notifier_key")[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "thredded_messageboard_notifications_for_followed_topics" ("id" bigserial primary key, "user_id" bigint NOT NULL, "messageboard_id" bigint NOT NULL, "notifier_key" character varying(90) NOT NULL, "enabled" boolean DEFAULT 't' NOT NULL)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "thredded_messageboard_notifications_for_followed_topics_unique" ON "thredded_messageboard_notifications_for_followed_topics"  ("user_id", "messageboard_id", "notifier_key")[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "thredded_user_post_notifications" ("id" bigserial primary key, "user_id" bigint NOT NULL, "post_id" bigint NOT NULL, "notified_at" timestamp NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_thredded_user_post_notifications_on_post_id" ON "thredded_user_post_notifications"  ("post_id")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_thredded_user_post_notifications_on_user_id_and_post_id" ON "thredded_user_post_notifications"  ("user_id", "post_id")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "thredded_user_post_notifications" ADD CONSTRAINT "fk_rails_5908eec802"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+ ON DELETE CASCADE[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "thredded_user_post_notifications" ADD CONSTRAINT "fk_rails_364d7e370a"
+FOREIGN KEY ("post_id")
+  REFERENCES "thredded_posts" ("id")
+ ON DELETE CASCADE[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170523214621"]]
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAdminToUsers (20170523214625)
+  [1m[35m (28.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.6ms)[0m  [1m[35mALTER TABLE "users" ADD "admin" boolean DEFAULT 'f' NOT NULL[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170523214625"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDisplayNameToUsers (20170523214633)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "display_name" character varying NOT NULL[0m
+  [1m[35mSQL (6.7ms)[0m  [1m[35mCREATE UNIQUE INDEX users_display_name_lower ON "users" (LOWER("display_name") text_pattern_ops)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170523214633"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-08-20 22:26:21.351670"], ["updated_at", "2017-08-20 22:26:21.351670"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3136125207111294720)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-08-20 17:26:23 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#show as HTML
+  Rendering home/show.html.erb within layouts/application
+  Rendered home/show.html.erb within layouts/application (2.8ms)
+  Rendered shared/_header.html.erb (12.0ms) [cache miss]
+  Rendered shared/_flash_messages.html.erb (0.6ms) [cache miss]
+Completed 200 OK in 785ms (Views: 771.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-20 17:28:14 -0500
+Processing by HomeController#show as HTML
+  Rendering home/show.html.erb within layouts/application
+  Rendered home/show.html.erb within layouts/application (0.7ms)
+  Rendered shared/_header.html.erb (3.0ms) [cache miss]
+  Rendered shared/_flash_messages.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 118ms (Views: 114.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-20 17:28:18 -0500
+Processing by HomeController#show as HTML
+  Rendering home/show.html.erb within layouts/application
+  Rendered home/show.html.erb within layouts/application (0.9ms)
+  Rendered shared/_header.html.erb (3.2ms) [cache miss]
+  Rendered shared/_flash_messages.html.erb (0.7ms) [cache miss]
+Completed 200 OK in 207ms (Views: 204.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-08-20 17:28:19 -0500
+Processing by HomeController#show as HTML
+  Rendering home/show.html.erb within layouts/application
+  Rendered home/show.html.erb within layouts/application (0.9ms)
+  Rendered shared/_header.html.erb (3.9ms) [cache miss]
+  Rendered shared/_flash_messages.html.erb (0.4ms) [cache miss]
+Completed 200 OK in 105ms (Views: 99.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/forum/" for 127.0.0.1 at 2017-08-20 17:28:20 -0500
+Processing by Thredded::MessageboardsController#index as HTML
+  [1m[35mSQL (1.7ms)[0m  [1m[34mSELECT "thredded_messageboards"."id" AS t0_r0, "thredded_messageboards"."name" AS t0_r1, "thredded_messageboards"."slug" AS t0_r2, "thredded_messageboards"."description" AS t0_r3, "thredded_messageboards"."topics_count" AS t0_r4, "thredded_messageboards"."posts_count" AS t0_r5, "thredded_messageboards"."position" AS t0_r6, "thredded_messageboards"."last_topic_id" AS t0_r7, "thredded_messageboards"."messageboard_group_id" AS t0_r8, "thredded_messageboards"."created_at" AS t0_r9, "thredded_messageboards"."updated_at" AS t0_r10, "thredded_messageboard_groups"."id" AS t1_r0, "thredded_messageboard_groups"."name" AS t1_r1, "thredded_messageboard_groups"."position" AS t1_r2, "thredded_messageboard_groups"."created_at" AS t1_r3, "thredded_messageboard_groups"."updated_at" AS t1_r4 FROM "thredded_messageboards" LEFT OUTER JOIN "thredded_messageboard_groups" ON "thredded_messageboard_groups"."id" = "thredded_messageboards"."messageboard_group_id" ORDER BY coalesce(thredded_messageboard_groups.position, 0) asc, thredded_messageboard_groups.id asc, "thredded_messageboards"."position" ASC, "thredded_messageboards"."id" ASC[0m
+  Rendering /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/messageboards/index.html.erb within layouts/application
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_breadcrumbs.html.erb (1.2ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/nav/_moderation.html.erb (0.7ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/nav/_notification_preferences.html.erb (5.0ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/nav/_private_topics.html.erb (2.8ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/search/_form.html.erb (2.0ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_nav.html.erb (23.5ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_header.html.erb (26.2ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_flash_messages.html.erb (0.7ms) [cache miss]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "thredded_user_details" ON "thredded_user_details"."user_id" = "users"."id" WHERE ("thredded_user_details"."last_seen_at" > '2017-08-20 22:23:20.662493')[0m
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_currently_online.html.erb (21.6ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/shared/_page.html.erb (61.0ms) [cache miss]
+  Rendered /Users/alexwen/.rvm/gems/ruby-2.3.1/gems/thredded-0.12.4/app/views/thredded/messageboards/index.html.erb within layouts/application (84.1ms)
+  Rendered shared/_header.html.erb (3.5ms) [cache miss]
+Completed 200 OK in 244ms (Views: 165.8ms | ActiveRecord: 14.7ms)
+
+
